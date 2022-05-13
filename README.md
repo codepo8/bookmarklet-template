@@ -7,6 +7,12 @@ This is a template to use to host your bookmarklets on GitHub pages or anywhere 
 1. Add your bookmarklet explanations as `{{EXPLANATIONS}}`
 1. Change the author name, URL and source code location in the footer
 
+The HTML page features a few benefits:
+
+1. It creates a link of your bookmarklet code that people can click or bookmark. This link only shows up when everything went well
+1. It has a dark/light mode
+1. It converts your code in `bml-code.js` to a bookmarklet
+
 The script in the index.html automatically converts your `bml-code.js` code to a bookmarklet and sets the `href` of the link to it. That way people can drag it into their favourites/bookmark toolbars. The script automatically:
 
 1. Removes newlines and indentation
