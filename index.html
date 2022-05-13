@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{BOOKMARKLET_NAME}} Bookmarklet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>{{BOOKMARKLET_NAME}} Bookmarklet</h1>
+    </header>
+    <section>
+        <p>{{EXPLANATIONS}}</p>
+        
+        <p>Drag the following link to your bookmarks bar to get the functionality.</p>
+
+        <p class="bookmarklet"><a id="bml">{{BOOKMARKLET_NAME}}</a></p>
+    </section>
+    <footer>
+        <p>
+           Written by <a href="https://christianheilmann.com">Chris Heilmann</a>, 
+           source code is <a href="https://github.com/codepo8/Quick-edit-bookmarklet">available on GitHub</a>.
+        </p>
+    </footer>
+<script>
+    fetch('bml-code.js').then(response => response.text()).then(script => {
+        const qe = document.querySelector('#bml');
+        let packedscript = script.replace(/\n\s+/g,'');
+        let bml = "javascript:(function(){" + encodeURIComponent(packedscript) + "})();";
+        console.log(bml);
+        qe.setAttribute('href', bml);   
+    }).catch(console.error);
+</script>
+</body>
+</html>
