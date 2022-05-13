@@ -13,6 +13,9 @@ The HTML page features a few benefits:
 1. It has a dark/light mode
 1. It converts your code in `bml-code.js` to a bookmarklet
 
+![screenshot of the template in light and dark mode](bookmarklet-template.png)
+ 
+
 The script in the index.html automatically converts your `bml-code.js` code to a bookmarklet and sets the `href` of the link to it. That way people can drag it into their favourites/bookmark toolbars. The script automatically:
 
 1. Removes newlines and indentation
